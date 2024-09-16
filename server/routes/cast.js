@@ -5,10 +5,10 @@ const { CastMember } = require('../models');
 // Get all cast members
 router.get('/', async (req, res) => {
   try {
-    const castMembers = await CastMember.find();
-    res.json(castMembers);
+    const cast = await CastMember.find();
+    res.json(cast);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ error: 'Failed to fetch cast members' });
   }
 });
 
